@@ -231,27 +231,35 @@ if (message.content.startsWith(adminprefix + 'setT')) {
  
 });
  
-client.on("message", message => {
+	client.on("message", message => {
  if (message.content === `${prefix}help`) {
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.RichEmbed() 
       .setColor("RANDOM")
       .setDescription(`
 ${prefix}join ⇏ لدخول البوت الروم
 ${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
+
 ${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
+${prefix}stop ⇏ لإخرآج البوت من الروم
+
 ${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
 ${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
+
 ${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
+${prefix}pause ⇏ إيقآف الأغنية مؤقتا
+
 ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
  `)
-   message.channel.sendEmbed(embed)
-   
+      .setFooter(message.author.tag, message.author.avatarURL)
+      .addField('** Welcome To Server Elite **', message.guild.name)
+
+
+
+	  message.channel.sendEmbed(embed)
+    
    }
-   });
- 
- 
+   }); 
+
  
  
  
